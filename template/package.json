@@ -17,7 +17,8 @@
     "axios": "^0.16.1",
     "vue": "^2.5.2"{{#router}},
     "vue-router": "^3.0.1"{{/router}}{{#vuex}},
-    "vuex": "^2.1.1"{{/vuex}}
+    "vuex": "^2.1.1"{{/vuex}}{{#elementui}},
+    "element-ui": "^2.4.1"{{/elementui}}
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -64,7 +65,7 @@
     "http-proxy-middleware": "^0.17.3",
     "webpack-bundle-analyzer": "^2.9.0",
     {{#unit}}
-   
+
     "cross-env": "^5.0.1",
     "karma": "^1.4.1",
     "karma-coverage": "^1.1.1",
