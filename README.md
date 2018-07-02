@@ -1,7 +1,6 @@
 ### EDT　VUE-CLI 模板
 
 EDT 前端模板（ROUTER、VUEX、ELEMENT-UI、AXIOS等）使用时请全部下载
-下面说下怎么自定义自己的vue-cli模板
 
 #### 关于ROUTER
 1. 请将所有业务模块路径添加置 ``/main``的子路由中，``path``请勿带第一个斜杠，写法请参照模板
@@ -24,6 +23,8 @@ EDT 前端模板（ROUTER、VUEX、ELEMENT-UI、AXIOS等）使用时请全部下
     data() {
         return {
             tableData: {
+                //流体缩减宽度，table流式布局
+                flowWidth: Number,
                 //table 表头数据数组，每个元素代表一列表头 必须键值
                 title: [{
                     //绑定table数据的键值
@@ -34,7 +35,22 @@ EDT 前端模板（ROUTER、VUEX、ELEMENT-UI、AXIOS等）使用时请全部下
                     width: ''
                 }],
                 //是否需要行按钮
-                btnFlag: Boolean
+                btnFlag: Boolean,
+                //行按钮列得宽度
+                btnWidth: Number,
+                btns: [
+                        {
+                          //handle传方法名称 自动接受参数scope 为row对象，handle均如此
+                          handle: this.updateRow,
+                          label: '修改'
+                        },
+                        {
+                          handle: this.deleteRow,
+                          label: '删除'
+                        }
+                      ],
+                //table数据 其中键值必须与title中的prop相对应
+                data: [{}]
             }
         }
     }
